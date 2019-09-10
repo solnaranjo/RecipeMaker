@@ -20,28 +20,32 @@ var aceite = Category(3)
 var recetasAmount = 0
 
 
-val receta1 = Recipe("Mi Receta")
+/*val receta1 = Recipe("Mi Receta")
 val receta2 = Recipe("Mi Receta 2")
 val receta3 = Recipe("Mi Receta 3")
 val receta4 = Recipe("Mi Receta 4")
-val receta5 = Recipe("Mi Receta 5")
+val receta5 = Recipe("Mi Receta 5")*/
+
+var recipeList = mutableListOf<Recipe>()
 
 fun main() {
 
 
     values()
 
-    val makeRecipe = { if (recetasAmount != 5)
+    val makeRecipe = {
 
-    { println( """:: Crea una receta hoy! ::
+        var userRecipe: Recipe = Recipe("Mi Receta")
+        println( """:: Crea una receta hoy! ::
                                     |
                                     |Escoge un ingrediente.
                                     """.trimMargin("|")
-    )
+        )
 
         var recipe = true
 
         do {
+
                 var it = 0
                 for (ing in categories) {
 
@@ -51,33 +55,12 @@ fun main() {
                 }
 
                 var option: String? = readLine()
-                /*when (option) {
-
-                    "1" -> option = "Agua"
-                    "2" -> option = "Leche"
-                    "3" -> option = "Carne"
-                    "4" -> option = "Verduras"
-                    "5" -> option = "Frutas"
-                    "6" -> option = "Cereal"
-                    "7" -> option = "Huevos"
-                    "8" -> option = "Aceite"
-                    else -> println("Por favor escoja un ingrediente valido")
-
-                }*/
 
                 it = 0
 
                 if (option.equals("1")) {
 
-                    when (recetasAmount) {
-
-                        0 -> receta1.addElement("Agua", receta1.getIngredients())
-                        1 -> receta2.addElement("Agua", receta2.getIngredients())
-                        2 -> receta3.addElement("Agua", receta3.getIngredients())
-                        3 -> receta4.addElement("Agua", receta4.getIngredients())
-                        4 -> receta5.addElement("Agua", receta5.getIngredients())
-
-                    }
+                       userRecipe.addElement("Agua", userRecipe.getIngredients())
 
                 } else if (option.equals("2")) {
 
@@ -98,15 +81,7 @@ fun main() {
 
                     }
 
-                    when (recetasAmount) {
-
-                        0 -> receta1.addElement(choice, receta1.getIngredients())
-                        1 -> receta2.addElement(choice, receta2.getIngredients())
-                        2 -> receta3.addElement(choice, receta3.getIngredients())
-                        3 -> receta4.addElement(choice, receta4.getIngredients())
-                        4 -> receta5.addElement(choice, receta5.getIngredients())
-
-                    }
+                    userRecipe.addElement(choice, userRecipe.getIngredients())
 
 
                 } else if (option.equals("3")) {
@@ -129,15 +104,7 @@ fun main() {
 
                     }
 
-                    when (recetasAmount) {
-
-                        0 -> receta1.addElement(choice, receta1.getIngredients())
-                        1 -> receta2.addElement(choice, receta2.getIngredients())
-                        2 -> receta3.addElement(choice, receta3.getIngredients())
-                        3 -> receta4.addElement(choice, receta4.getIngredients())
-                        4 -> receta5.addElement(choice, receta5.getIngredients())
-
-                    }
+                    userRecipe.addElement(choice, userRecipe.getIngredients())
 
                 } else if (option.equals("4")) {
 
@@ -166,15 +133,7 @@ fun main() {
 
                     }
 
-                    when (recetasAmount) {
-
-                        0 -> receta1.addElement(choice, receta1.getIngredients())
-                        1 -> receta2.addElement(choice, receta2.getIngredients())
-                        2 -> receta3.addElement(choice, receta3.getIngredients())
-                        3 -> receta4.addElement(choice, receta4.getIngredients())
-                        4 -> receta5.addElement(choice, receta5.getIngredients())
-
-                    }
+                    userRecipe.addElement(choice, userRecipe.getIngredients())
 
                 } else if (option.equals("5")) {
 
@@ -203,16 +162,7 @@ fun main() {
 
                     }
 
-                    when (recetasAmount) {
-
-                        0 -> receta1.addElement(choice, receta1.getIngredients())
-                        1 -> receta2.addElement(choice, receta2.getIngredients())
-                        2 -> receta3.addElement(choice, receta3.getIngredients())
-                        3 -> receta4.addElement(choice, receta4.getIngredients())
-                        4 -> receta5.addElement(choice, receta5.getIngredients())
-
-                    }
-
+                    userRecipe.addElement(choice, userRecipe.getIngredients())
 
                 } else if (option.equals("6")) {
 
@@ -236,15 +186,7 @@ fun main() {
 
                     }
 
-                    when (recetasAmount) {
-
-                        0 -> receta1.addElement(choice, receta1.getIngredients())
-                        1 -> receta2.addElement(choice, receta2.getIngredients())
-                        2 -> receta3.addElement(choice, receta3.getIngredients())
-                        3 -> receta4.addElement(choice, receta4.getIngredients())
-                        4 -> receta5.addElement(choice, receta5.getIngredients())
-
-                    }
+                    userRecipe.addElement(choice, userRecipe.getIngredients())
 
 
                 } else if (option.equals("7")) {
@@ -267,15 +209,7 @@ fun main() {
 
                     }
 
-                    when (recetasAmount) {
-
-                        0 -> receta1.addElement(choice, receta1.getIngredients())
-                        1 -> receta2.addElement(choice, receta2.getIngredients())
-                        2 -> receta3.addElement(choice, receta3.getIngredients())
-                        3 -> receta4.addElement(choice, receta4.getIngredients())
-                        4 -> receta5.addElement(choice, receta5.getIngredients())
-
-                    }
+                    userRecipe.addElement(choice, userRecipe.getIngredients())
 
                 } else if (option.equals("8")) {
 
@@ -297,15 +231,7 @@ fun main() {
 
                     }
 
-                    when (recetasAmount) {
-
-                        0 -> receta1.addElement(choice, receta1.getIngredients())
-                        1 -> receta2.addElement(choice, receta2.getIngredients())
-                        2 -> receta3.addElement(choice, receta3.getIngredients())
-                        3 -> receta4.addElement(choice, receta4.getIngredients())
-                        4 -> receta5.addElement(choice, receta5.getIngredients())
-
-                    }
+                    userRecipe.addElement(choice, userRecipe.getIngredients())
 
                 }
 
@@ -317,15 +243,8 @@ fun main() {
                     println("Antes de terminar, escribe el nombre de tu receta.")
                     val title = readLine()
 
-                    when (recetasAmount) {
-
-                        0 -> receta1.setTitle("$title")
-                        1 -> receta2.setTitle("$title")
-                        2 -> receta3.setTitle("$title")
-                        3 -> receta4.setTitle("$title")
-                        4 -> receta5.setTitle("$title")
-
-                    }
+                    userRecipe.setTitle("$title")
+                    recipeList.add(userRecipe)
                     println("Listo!")
                     recetasAmount++
                     recipe = false
@@ -334,73 +253,35 @@ fun main() {
 
         } while (recipe.equals(true))
 
-    } else {
-
-        println("El maximo numero de recetas es 5")
-
-    }
-
-
     }
 
     var contadora: Int? = 1
-    val showRecipe = {    println("Cual es la receta que quieres ver? (1 a 5)")
+    val showRecipe = {
+
+                    println("Cual es titulo la receta que quieres ver?")
                     val opcion:String? = readLine()
-                    //var titleToShow: String? = ""
+                    loop@ for (r in recipeList) {
 
-                    when(opcion) {
+                        if (r.getTitle() == opcion) {
 
-                        "1" -> {
+                            val titleToShow = r.getTitle()
+                            println(titleToShow)
 
-                            println(receta1.getTitle())
-                            val receta = receta1.getIngredients()
-                            for (ingrediente in receta) {
-                                println(ingrediente)
-                            }
+                            val ing = r.getIngredients()
 
-                        }
+                            for (i in ing) {
 
-                        "2" -> {
-
-                            println(receta2.getTitle())
-                            val receta = receta2.getIngredients()
-                            for (ingrediente in receta) {
-                                println(ingrediente)
-                            }
-                        }
-                        "3" -> {
-
-                            println(receta3.getTitle())
-                            val receta = receta3.getIngredients()
-                            for (ingrediente in receta) {
-                                println(ingrediente)
-                            }
-                        }
-                        "4" -> {
-
-                            println(receta4.getTitle())
-                            val receta = receta4.getIngredients()
-                            for (ingrediente in receta) {
-
-                                println(ingrediente)
-
-                            }
-                        }
-                        "5" -> {
-
-                            println(receta5.getTitle())
-                            val receta = receta5.getIngredients()
-                            for (ingrediente in receta) {
-
-                                println(ingrediente)
+                                println(i)
 
                             }
 
+                            loop@break
+
                         }
-                        else -> println("No es una receta valida")
 
+                    }
+    }
 
-                    }}
 
 menu@ do {
 
